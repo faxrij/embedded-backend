@@ -8,21 +8,25 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 });
 
 const Info = sequelize.define('Info', {
-  isik: {
+  tempereture: {
     type: DataTypes.FLOAT,
     allowNull: false
   },
-  nem: {
+  humidity: {
     type: DataTypes.FLOAT,
     allowNull: false
   },
-  sicaklik: {
+  light: {
     type: DataTypes.FLOAT,
     allowNull: false
   },
-  created_date: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW
+  su_nemi: {
+    type: DataTypes.FLOAT,
+    allowNull: false
+  },
+  motor_run: {
+    type: DataTypes.FLOAT,
+    allowNull: false
   }
 });
 
