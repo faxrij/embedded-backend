@@ -1,9 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const { Info } = require('./models');
 
 const app = express();
 const port = 3000;
 
+app.use(cors());
 app.use(express.json());
 
 const validateData = (req, res, next) => {
@@ -52,6 +54,6 @@ app.get('/api/sensordata/closest', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running at http://0.0.0.0:${port}`);
 });
